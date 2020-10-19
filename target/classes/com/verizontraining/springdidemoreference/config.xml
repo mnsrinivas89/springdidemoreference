@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="com.verizontraining.springdidemoreference.Player"
+		name="player" p:name="Lionell Messi" p:country="Argentina"
+		p:position="RW" />
+	<bean class="com.verizontraining.springdidemoreference.Player"
+		name="player1" p:name="Serigo Busquests" p:country="Argentina"
+		p:position="CDM" />
+	<bean class="com.verizontraining.springdidemoreference.Player"
+		name="player2" p:name="Iniesta" p:country="Argentina"
+		p:position="LM" />
+
+	<bean class="com.verizontraining.springdidemoreference.Club"
+		name="club">
+		<property name="clubName">
+			<value>FC Barcelona</value>
+		</property>
+		<property name="players">
+			<list>
+				<ref bean="player" />
+				<ref bean="player1" />
+				<ref bean="player2" />
+			</list>
+		</property>
+	</bean>
+
+</beans>
